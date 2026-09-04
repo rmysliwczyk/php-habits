@@ -1,6 +1,10 @@
 <?php
 // Code for interaction with the database.
-$dbh = new PDO("mysql:host=localhost;dbname=habits", "root", "db");
+
+// For local testing:
+//$dbh = new PDO("mysql:host=localhost;dbname=habits", "root", "db");
+
+$dbh = new PDO(getenv("DB_URL"), getenv("DB_USER"), getenv("DB_PASSWORD"));
 $stmt = $dbh->prepare("CREATE TABLE IF NOT EXISTS users (
 	id INT AUTO_INCREMENT PRIMARY KEY,
 	username TEXT,
