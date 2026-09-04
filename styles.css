@@ -1,0 +1,137 @@
+/* My baseline */
+/* General */
+:root {
+	--text-color: #FAFAFA;
+	--bg-color: #0A0A0A;
+	--primary-color: #1b3a4b;
+}
+
+@font-face {
+	font-family: "roboto";
+	src: url("roboto.ttf");
+}
+
+body {
+	margin: 0px;
+	padding: 0px;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+
+	background-color: var(--bg-color);
+
+	font-family: "roboto";
+	color: var(--text-color);
+}
+
+/* Forms */
+form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
+}
+
+input {
+	padding: 6px;
+
+	width: 128px;
+
+	background-color: var(--bg-color);
+	color: var(--text-color);
+
+	border: solid var(--text-color) 1px;
+	border-radius: 4px;
+}
+
+button {
+	padding: 6px;
+
+	min-width: 56px;
+
+	background-color: var(--bg-color);
+	color: var(--text-color);
+
+	border: solid var(--text-color) 1px;
+	border-radius: 4px;
+}
+
+button:hover, input:hover {
+	cursor: pointer;
+
+	background-color: rgb(from var(--bg-color) calc(R + 50) calc(G + 50) calc(B + 50));
+	box-shadow: 0px 0px 10px var(--text-color);
+}
+
+button:focus, input:focus {
+	outline: solid var(--text-color) 2px;
+	box-shadow: 0px 0px 10px var(--text-color);
+}
+
+label:has(+ input:hover) {
+	text-shadow: 0px 0px 2px var(--text-color);
+}
+
+
+/* Links */
+a {
+	text-decoration: underline;
+	color: var(--text-color);
+}
+
+a:hover {
+	text-shadow: 0px 0px 2px var(--text-color);
+}
+
+/* Lists */
+ul {
+	margin: 0px;
+	padding: 0px;
+	list-style: "> ";
+}
+
+/* App specific */
+#habit-squares {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 5px;
+}
+
+form {
+	margin: 0px;
+	padding: 0px;
+}
+
+.habit-square {
+	margin: 0px;
+	padding: 0px;
+	width: 64px;
+	height: 64px;
+	background-color: #F3F3F3;
+	box-shadow: #DDDDDD 2px 2px 1px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.habit-square {
+	width: 64px;
+	height: 64px;
+	background-color: #1F1F1F;
+	box-shadow: #DDDDDD 2px 2px 1px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.habit-square[data-completed] {
+	background-color: #efc070;
+	box-shadow: #FFF5B6 0px 0px 10px;
+
+}
+
+.habit-meta {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+}
