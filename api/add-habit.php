@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (!isset($_SESSION)) {
+	session_start();
+}
 include('db.php');
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	$description = $_POST['description'];

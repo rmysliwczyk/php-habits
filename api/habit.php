@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (!isset($_SESSION)) {
+	session_start();
+}
 include('db.php');
 $matches = [];
 preg_match("/\/(\d*)[\/]*/", $_SERVER['PATH_INFO'], $matches);
